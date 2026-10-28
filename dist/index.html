@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Aseema S — Computer Science student, developer, and technology enthusiast.">
+  <title>Aseema S | Digital Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>:root{--bg:#090b12;--panel:#121522;--text:#f5f2ff;--muted:#aaa8bd;--orange:#ffa477;--purple:#b9a3ff;--mint:#91f2cc;--line:#ffffff1f}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:85px}body{background:var(--bg);color:var(--text);font-family:Manrope,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.container{width:min(1120px,88%);margin:auto}header{z-index:1000;-webkit-backdrop-filter:blur(22px)saturate(145%);background:#0f122094;border:1px solid #ffffff29;border-radius:18px;justify-content:space-between;align-items:center;height:76px;padding:0 6%;display:flex;position:sticky;top:12px;box-shadow:0 8px 32px #0000003d,inset 0 1px #ffffff0d}.brand{letter-spacing:2px;font-size:15px;font-weight:800}.brand span{color:var(--orange)}nav{align-items:center;gap:28px;display:flex}nav a{color:#d0cde0;font-size:12px;transition:color .2s}nav a:hover{color:var(--orange)}.nav-button,.button{border-radius:8px;justify-content:center;align-items:center;gap:9px;padding:13px 18px;font-size:12px;font-weight:800;transition:all .25s;display:inline-flex}.nav-button,.primary{background:var(--orange);color:#20131a}.button:hover,.nav-button:hover{transform:translateY(-3px)}.secondary{border:1px solid var(--line)}.secondary:hover{border-color:var(--purple)}.hero{grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;min-height:690px;padding-top:65px;padding-bottom:80px;display:grid}.eyebrow{color:var(--mint);letter-spacing:2px;margin-bottom:24px;font:10px DM Mono,monospace}.hero h1{letter-spacing:-4px;margin-bottom:25px;font-size:clamp(45px,6vw,76px);line-height:1.08}.gradient{background:linear-gradient(100deg, var(--orange), var(--purple), var(--mint));color:#0000;-webkit-background-clip:text;background-clip:text}.lead{max-width:520px;color:var(--muted);font-size:14px;line-height:1.9}.actions{flex-wrap:wrap;gap:12px;margin-top:30px;display:flex}.details{flex-wrap:wrap;gap:35px;margin-top:42px;display:flex}.details small{color:#777b91;margin-bottom:9px;font:9px DM Mono,monospace;display:block}.details strong{font-size:11px}.art{place-items:center;height:390px;display:grid;position:relative}.orb{text-align:center;background:radial-gradient(circle at 35% 25%,#35305a,#151422 65%,#0d101b);border:1px solid #625587;border-radius:50%;place-items:center;width:225px;height:225px;animation:5s ease-in-out infinite float;display:grid;box-shadow:0 0 90px #9d79ff25}.orb strong{color:var(--purple);font-size:40px}.orb span{letter-spacing:3px;margin-top:10px;font:10px DM Mono,monospace;display:block}.ring{border:1px solid #b9a3ff4a;border-radius:50%;width:330px;height:145px;animation:18s linear infinite rotate;position:absolute;transform:rotate(-30deg)}.ring.two{border-color:#91f2cc35;width:300px;height:300px;animation-duration:30s;animation-direction:reverse;transform:none}.floating{border:1px solid var(--line);background:#171927;border-radius:10px;padding:13px 15px;font:11px DM Mono,monospace;animation:4s ease-in-out infinite float;position:absolute}.float-one{color:var(--mint);top:40px;left:0}.float-two{color:var(--orange);animation-delay:-2s;bottom:48px;right:0}section.content{padding-top:95px;padding-bottom:95px}.section-head{justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px;display:flex}h2{letter-spacing:-2px;font-size:clamp(32px,4vw,48px);line-height:1.15}.section-head p{max-width:360px;color:var(--muted);font-size:12px;line-height:1.9}.grid{grid-template-columns:repeat(3,1fr);gap:16px;display:grid}.card{border:1px solid var(--line);background:linear-gradient(145deg,#191b2a,#10121c);border-radius:13px;padding:24px;transition:transform .3s,border-color .3s}.card:hover{border-color:#b9a3ff80;transform:translateY(-6px)}.number{color:var(--orange);font:10px DM Mono,monospace}.card h3{margin:24px 0 12px;font-size:17px}.card p{color:var(--muted);min-height:68px;font-size:12px;line-height:1.9}.tags{flex-wrap:wrap;gap:7px;margin-top:20px;display:flex}.tag{border:1px solid var(--line);color:#d2cee3;border-radius:5px;padding:6px 8px;font:9px DM Mono,monospace}.about{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#10121c}.about-layout{grid-template-columns:.8fr 1.2fr;align-items:center;gap:65px;display:grid}.about-art{text-align:center;width:250px;height:250px;color:var(--purple);border:1px solid #b9a3ff55;border-radius:50%;place-items:center;margin:auto;font-size:29px;font-weight:800;display:grid;transform:rotate(-7deg);box-shadow:0 0 80px #b9a3ff13}.about-copy p{color:var(--muted);margin-top:18px;font-size:13px;line-height:2}.skills{grid-template-columns:repeat(4,1fr);gap:13px;margin-top:35px;display:grid}.skill{border:1px solid var(--line);background:#11131e;border-radius:10px;padding:20px}.skill span{font-size:22px}.skill h3{margin:16px 0 8px;font-size:13px}.skill p{color:var(--muted);font-size:11px;line-height:1.8}.contact{text-align:center;background:radial-gradient(at 50% 100%,#30234b65,#0000 65%);padding:110px 0!important}.contact h2{margin-bottom:22px;font-size:clamp(42px,7vw,72px)}.contact p{max-width:490px;color:var(--muted);margin:auto;font-size:13px;line-height:1.9}.contact .actions{justify-content:center}footer{border-top:1px solid var(--line);color:#85859a;justify-content:space-between;gap:20px;padding:25px 6%;font:10px DM Mono,monospace;display:flex}.reveal{opacity:0;transition:all .7s;transform:translateY(20px)}.reveal.visible{opacity:1;transform:translateY(0)}@keyframes float{0%,to{translate:0}50%{translate:0 -12px}}@keyframes rotate{to{rotate:360deg}}@media (width<=800px){header{padding:0 5%}nav{gap:13px}nav a{font-size:10px}.hero{grid-template-columns:1fr;padding-top:85px}.art{height:330px}.hero h1{letter-spacing:-2px}.grid{grid-template-columns:repeat(2,1fr)}.about-layout{grid-template-columns:1fr;gap:45px}.skills{grid-template-columns:repeat(2,1fr)}}@media (width<=520px){header{flex-wrap:wrap;gap:12px;height:auto;min-height:68px;padding-top:14px;padding-bottom:14px}nav{flex-wrap:wrap;justify-content:space-between;gap:8px;width:100%}nav a{font-size:10px}.nav-button{padding:9px}.container{width:90%}.hero{padding-top:65px}.hero h1{font-size:48px}.lead{font-size:13px}.details{gap:22px}.art{margin:-10px -15px;transform:scale(.88)}section.content{padding-top:70px;padding-bottom:70px}.section-head{display:block}.section-head p{margin-top:17px}.grid{grid-template-columns:1fr}.card p{min-height:0}.skills{grid-template-columns:1fr 1fr}.skill{padding:14px}footer{flex-direction:column}}@media (prefers-reduced-motion:reduce){*,:before,:after{scroll-behavior:auto;transition:none;animation:none!important}.reveal{opacity:1;transform:none}}.resume-buttons{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(100%,760px);margin:32px auto 0;display:grid}.resume-button{isolation:isolate;min-height:68px;color:var(--text);text-align:left;background:linear-gradient(135deg,#ffa47717,#b9a3ff1a,#91f2cc0f);border:1px solid #b9a3ff52;border-radius:12px;justify-content:space-between;align-items:center;gap:14px;padding:18px 20px;font-size:12px;font-weight:800;transition:transform .28s,border-color .28s,box-shadow .28s,background .28s;display:flex;position:relative;overflow:hidden}.resume-button:before{content:"";z-index:-1;background:linear-gradient(110deg,#0000 20%,#ffffff1a 48%,#0000 75%);transition:transform .6s;position:absolute;inset:0;transform:translate(-120%)}.resume-button:hover{border-color:var(--orange);background:linear-gradient(135deg,#ffa47729,#b9a3ff21,#91f2cc17);transform:translateY(-4px);box-shadow:0 12px 30px #b9a3ff1a,0 0 0 1px #ffa4770f}.resume-button:hover:before{transform:translate(120%)}.resume-button .resume-label{flex-direction:column;gap:5px;display:flex}.resume-button .resume-category{color:var(--muted);letter-spacing:1.4px;text-transform:uppercase;font:9px DM Mono,monospace}.resume-button .resume-arrow{width:32px;height:32px;color:var(--orange);background:#ffa4771f;border-radius:9px;flex:none;place-items:center;transition:transform .28s,background .28s,color .28s;display:grid}.resume-button:hover .resume-arrow{background:var(--orange);color:#20131a;transform:translate(2px,-2px)}@media (width<=520px){.resume-buttons{grid-template-columns:1fr;gap:10px}.resume-button{min-height:62px;padding:15px 16px}}@media (prefers-reduced-motion:reduce){.resume-button,.resume-button:before,.resume-button .resume-arrow{transition:none}.resume-button:hover{transform:none}}.nav-contact{white-space:nowrap;background:linear-gradient(110deg, var(--orange), #ffc09d);flex:none;box-shadow:0 5px 18px #ffa47724}.nav-contact:hover{box-shadow:0 8px 24px #ffa4773d}@media (width<=800px){header{gap:14px}.nav-contact{padding:11px 13px}}@media (width<=520px){.nav-contact{margin-left:auto}}</style>
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="#home">ASEEMA<span></span></a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-button nav-contact" href="mailto:aseema1652@gmail.com?subject=Portfolio%20Enquiry" aria-label="Contact Aseema by email">
+      Let's talk <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <div class="eyebrow">✳ OPEN TO INTERNSHIPS & COLLABORATIONS</div>
+        <h1>Curious mind.<br><span class="gradient">Creative builder.</span><br>Future-focused.</h1>
+        <p class="lead">
+          I'm Aseema — a Computer Science student exploring the intersection of web experiences, intelligent systems, and quantum computing.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#work">Explore my work ↘</a>
+          <a class="button secondary" href="#contact">Get in touch ↗</a>
+        </div>
+        <div class="details">
+          <div><small>CURRENT FOCUS</small><strong>Frontend · AI · Quantum</strong></div>
+          <div><small>BASED IN</small><strong>Chennai, India</strong></div>
+        </div>
+      </div>
+
+      <div class="art">
+        <div class="ring"></div>
+        <div class="ring two"></div>
+        <div class="orb"><div><strong>✳</strong><span>IDEAS IN MOTION</span></div></div>
+        <div class="floating float-one">✦ always learning</div>
+        <div class="floating float-two">build() ↗</div>
+      </div>
+    </section>
+
+    <section class="content container" id="work">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / SELECTED WORK</div><h2>Ideas turned into<br><span class="gradient">experiments.</span></h2></div>
+        <p>A selection of projects across development, data, and emerging technology. Each one is a chance to learn by building.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <span class="number">PROJECT / 01</span>
+          <h3>Quantum Portfolio Optimizer</h3>
+          <p>Exploring portfolio allocation through quantum optimization and financial decision models.</p>
+          <div class="tags"><span class="tag">Qiskit</span><span class="tag">QAOA</span><span class="tag">Python</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 02</span>
+          <h3>Molecular Stability Explorer</h3>
+          <p>A research concept exploring molecular energy optimization and quantum chemistry.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">VQE</span><span class="tag">Quantum</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 03</span>
+          <h3>Pathfinder Website</h3>
+          <p>A responsive web experience focused on clear navigation, layout, and usability.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 04</span>
+          <h3>Flight Price Prediction</h3>
+          <p>A data-focused project exploring flight price prediction and a web-based interface.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Machine Learning</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 05</span>
+          <h3>Crop-Yield Prediction</h3>
+          <p>An agriculture-focused machine learning concept exploring data-driven predictions.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">Data</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 06</span>
+          <h3>UI & Visual Design</h3>
+          <p>Visual explorations of interface layouts, design systems, and user-focused experiences.</p>
+          <div class="tags"><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">Adobe</span></div>
+        </article>
+      </div>
+
+      <p style="color:var(--muted);font-size:11px;margin-top:25px">
+        Explore more on <a style="color:var(--mint)" href="https://github.com/Aseema-s" target="_blank" rel="noopener">GitHub ↗</a>
+      </p>
+    </section>
+
+    <section class="content about" id="about">
+      <div class="container about-layout">
+        <div class="about-art">MADE OF<br><span class="gradient">curiosity</span><br>✳</div>
+        <div class="about-copy">
+          <div class="eyebrow">02 / A LITTLE ABOUT ME</div>
+          <h2>Learning out loud.<br><span class="gradient">Building with intent.</span></h2>
+          <p>I'm pursuing Computer Science and Engineering, with a growing interest in frontend development, data science, and quantum computing.</p>
+          <p>I enjoy moving between logic and creativity — exploring algorithms, refining layouts, and experimenting with new ideas. I value curiosity, thoughtful collaboration, and learning by building, testing, and improving.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content container" id="skills">
+      <div class="eyebrow">03 / MY TOOLKIT</div>
+      <h2>Different tools.<br><span class="gradient">One curious brain.</span></h2>
+      <div class="skills">
+        <article class="skill"><span>⌘</span><h3>Frontend</h3><p>HTML, CSS, JavaScript, responsive design, React fundamentals.</p></article>
+        <article class="skill"><span>✳</span><h3>AI & Data</h3><p>Python, machine learning, NLP, and data analysis concepts.</p></article>
+        <article class="skill"><span>◎</span><h3>Quantum</h3><p>Qiskit, QAOA, VQE, QUBO, and quantum ML concepts.</p></article>
+        <article class="skill"><span>✎</span><h3>Design & Tools</h3><p>Figma, Canva, Adobe tools, Git, GitHub, and VS Code.</p></article>
+      </div>
+    </section>
+
+    <section class="content contact" id="contact">
+      <div class="container">
+        <div class="eyebrow">04 / HAVE SOMETHING IN MIND?</div>
+        <h2>Let's make<br><span class="gradient">something matter.</span></h2>
+        <p>Open to internships, collaborations, and opportunities to learn by doing. I'd love to hear from you.</p>
+        <div class="resume-buttons">
+          <a class="resume-button" href="/Aseema_S_Data_Science_Analytics_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 01</span>
+              <span>Data Science &amp; Analytics</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="resume-button" href="/Aseema_S_Frontend_Web_Development_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 02</span>
+              <span>Front-End Web Development</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="resume-button" href="/Aseema_S_Quantum_Computing_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 03</span>
+              <span>Quantum Computing</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="resume-button" href="/Aseema_S_UI_UX_Design_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 04</span>
+              <span>UI/UX Design</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="actions" style="justify-content:center; margin-top:28px">
+          <a class="button secondary" href="https://github.com/Aseema-s" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="button secondary" href="https://linkedin.com/in/aseema-s" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>ASEEMA S · DIGITAL PORTFOLIO</span>
+    <span>MADE WITH CURIOSITY ✳</span>
+    <span>© <span id="year"></span></span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  </script>
+</body>
+</html>

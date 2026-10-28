@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Aseema S — Computer Science student, developer, and technology enthusiast.">
+  <title>Aseema S | Digital Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090b12;
+      --panel: #121522;
+      --text: #f5f2ff;
+      --muted: #aaa8bd;
+      --orange: #ffa477;
+      --purple: #b9a3ff;
+      --mint: #91f2cc;
+      --line: rgba(255,255,255,.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Manrope, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; }
+
+    .container { width: min(1120px, 88%); margin: auto; }
+
+    header {
+  height: 76px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 12px;
+  z-index: 1000;
+
+  background: rgba(15, 18, 32, 0.58);
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+    .brand { font-size: 15px; font-weight: 800; letter-spacing: 2px; }
+    .brand span { color: var(--orange); }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { font-size: 12px; color: #d0cde0; transition: color .2s; }
+    nav a:hover { color: var(--orange); }
+
+    .nav-button, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .nav-button, .primary {
+      background: var(--orange);
+      color: #20131a;
+    }
+
+    .button:hover, .nav-button:hover { transform: translateY(-3px); }
+    .secondary { border: 1px solid var(--line); }
+    .secondary:hover { border-color: var(--purple); }
+
+    .hero {
+      min-height: 690px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 30px;
+      padding-top: 65px;
+      padding-bottom: 80px;
+    }
+
+    .eyebrow {
+      color: var(--mint);
+      font: 10px "DM Mono", monospace;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 6vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .gradient {
+      background: linear-gradient(100deg, var(--orange), var(--purple), var(--mint));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      max-width: 520px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+    .details { display: flex; flex-wrap: wrap; gap: 35px; margin-top: 42px; }
+    .details small { display: block; color: #777b91; font: 9px "DM Mono", monospace; margin-bottom: 9px; }
+    .details strong { font-size: 11px; }
+
+    .art {
+      height: 390px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .orb {
+      width: 225px;
+      height: 225px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: radial-gradient(circle at 35% 25%, #35305a, #151422 65%, #0d101b);
+      border: 1px solid #625587;
+      box-shadow: 0 0 90px #9d79ff25;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .orb strong { font-size: 40px; color: var(--purple); }
+    .orb span { display: block; font: 10px "DM Mono", monospace; letter-spacing: 3px; margin-top: 10px; }
+
+    .ring {
+      position: absolute;
+      width: 330px;
+      height: 145px;
+      border: 1px solid #b9a3ff4a;
+      border-radius: 50%;
+      transform: rotate(-30deg);
+      animation: rotate 18s linear infinite;
+    }
+
+    .ring.two {
+      width: 300px;
+      height: 300px;
+      transform: none;
+      border-color: #91f2cc35;
+      animation-duration: 30s;
+      animation-direction: reverse;
+    }
+
+    .floating {
+      position: absolute;
+      background: #171927;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 13px 15px;
+      font: 11px "DM Mono", monospace;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .float-one { top: 40px; left: 0; color: var(--mint); }
+    .float-two { bottom: 48px; right: 0; color: var(--orange); animation-delay: -2s; }
+
+    section.content { padding-top: 95px; padding-bottom: 95px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    h2 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -2px; line-height: 1.15; }
+    .section-head p { max-width: 360px; color: var(--muted); font-size: 12px; line-height: 1.9; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .card {
+      padding: 24px;
+      background: linear-gradient(145deg, #191b2a, #10121c);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      transition: transform .3s, border-color .3s;
+    }
+
+    .card:hover { transform: translateY(-6px); border-color: #b9a3ff80; }
+
+    .number { font: 10px "DM Mono", monospace; color: var(--orange); }
+    .card h3 { font-size: 17px; margin: 24px 0 12px; }
+    .card p { color: var(--muted); font-size: 12px; line-height: 1.9; min-height: 68px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+    .tag { border: 1px solid var(--line); border-radius: 5px; padding: 6px 8px; font: 9px "DM Mono", monospace; color: #d2cee3; }
+
+    .about {
+      background: #10121c;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: center; }
+
+    .about-art {
+      border: 1px solid #b9a3ff55;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--purple);
+      font-size: 29px;
+      font-weight: 800;
+      box-shadow: 0 0 80px #b9a3ff13;
+      transform: rotate(-7deg);
+    }
+
+    .about-copy p { color: var(--muted); font-size: 13px; line-height: 2; margin-top: 18px; }
+
+    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; margin-top: 35px; }
+    .skill { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: #11131e; }
+    .skill span { font-size: 22px; }
+    .skill h3 { font-size: 13px; margin: 16px 0 8px; }
+    .skill p { color: var(--muted); font-size: 11px; line-height: 1.8; }
+
+    .contact {
+      text-align: center;
+      padding: 110px 0 !important;
+      background: radial-gradient(ellipse at 50% 100%, #30234b65, transparent 65%);
+    }
+
+    .contact h2 { font-size: clamp(42px, 7vw, 72px); margin-bottom: 22px; }
+    .contact p { max-width: 490px; margin: auto; font-size: 13px; line-height: 1.9; color: var(--muted); }
+    .contact .actions { justify-content: center; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 6%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #85859a;
+      font: 10px "DM Mono", monospace;
+    }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: .7s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+    @keyframes rotate { to { rotate: 360deg; } }
+
+    @media (max-width: 800px) {
+      header { padding: 0 5%; }
+      nav { gap: 13px; }
+      nav a { font-size: 10px; }
+      .hero { grid-template-columns: 1fr; padding-top: 85px; }
+      .art { height: 330px; }
+      .hero h1 { letter-spacing: -2px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .about-layout { grid-template-columns: 1fr; gap: 45px; }
+      .skills { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      header { height: auto; min-height: 68px; flex-wrap: wrap; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+      nav { width: 100%; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+      nav a { font-size: 10px; }
+      .nav-button { padding: 9px; }
+      .container { width: 90%; }
+      .hero { padding-top: 65px; }
+      .hero h1 { font-size: 48px; }
+      .lead { font-size: 13px; }
+      .details { gap: 22px; }
+      .art { transform: scale(.88); margin: -10px -15px; }
+      section.content { padding-top: 70px; padding-bottom: 70px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 17px; }
+      .grid { grid-template-columns: 1fr; }
+      .card p { min-height: 0; }
+      .skills { grid-template-columns: 1fr 1fr; }
+      .skill { padding: 14px; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; scroll-behavior: auto; transition: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* Resume buttons: animated accents that match the orange, purple, and mint palette */
+    .resume-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      width: min(100%, 760px);
+      margin: 32px auto 0;
+    }
+
+    .resume-button {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 68px;
+      padding: 18px 20px;
+      border: 1px solid rgba(185, 163, 255, .32);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255, 164, 119, .09), rgba(185, 163, 255, .10), rgba(145, 242, 204, .06));
+      color: var(--text);
+      text-align: left;
+      font-size: 12px;
+      font-weight: 800;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+    }
+
+    .resume-button::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.10) 48%, transparent 75%);
+      transform: translateX(-120%);
+      transition: transform .6s ease;
+    }
+
+    .resume-button:hover {
+      transform: translateY(-4px);
+      border-color: var(--orange);
+      background: linear-gradient(135deg, rgba(255, 164, 119, .16), rgba(185, 163, 255, .13), rgba(145, 242, 204, .09));
+      box-shadow: 0 12px 30px rgba(185, 163, 255, .10), 0 0 0 1px rgba(255, 164, 119, .06);
+    }
+
+    .resume-button:hover::before { transform: translateX(120%); }
+
+    .resume-button .resume-label {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .resume-button .resume-category {
+      color: var(--muted);
+      font: 9px "DM Mono", monospace;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .resume-button .resume-arrow {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: rgba(255, 164, 119, .12);
+      color: var(--orange);
+      transition: transform .28s ease, background .28s ease, color .28s ease;
+    }
+
+    .resume-button:hover .resume-arrow {
+      transform: translate(2px, -2px);
+      background: var(--orange);
+      color: #20131a;
+    }
+
+    @media (max-width: 520px) {
+      .resume-buttons { grid-template-columns: 1fr; gap: 10px; }
+      .resume-button { min-height: 62px; padding: 15px 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .resume-button, .resume-button::before, .resume-button .resume-arrow { transition: none; }
+      .resume-button:hover { transform: none; }
+    }
+
+
+    .nav-contact {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      background: linear-gradient(110deg, var(--orange), #ffc09d);
+      box-shadow: 0 5px 18px rgba(255, 164, 119, .14);
+    }
+
+    .nav-contact:hover {
+      box-shadow: 0 8px 24px rgba(255, 164, 119, .24);
+    }
+
+    @media (max-width: 800px) {
+      header { gap: 14px; }
+      .nav-contact { padding: 11px 13px; }
+    }
+
+    @media (max-width: 520px) {
+      .nav-contact { margin-left: auto; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="#home">ASEEMA<span></span></a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-button nav-contact" href="mailto:aseema1652@gmail.com?subject=Portfolio%20Enquiry" aria-label="Contact Aseema by email">
+      Let's talk <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <div class="eyebrow">✳ OPEN TO INTERNSHIPS & COLLABORATIONS</div>
+        <h1>Curious mind.<br><span class="gradient">Creative builder.</span><br>Future-focused.</h1>
+        <p class="lead">
+          I'm Aseema — a Computer Science student exploring the intersection of web experiences, intelligent systems, and quantum computing.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#work">Explore my work ↘</a>
+          <a class="button secondary" href="#contact">Get in touch ↗</a>
+        </div>
+        <div class="details">
+          <div><small>CURRENT FOCUS</small><strong>Frontend · AI · Quantum</strong></div>
+          <div><small>BASED IN</small><strong>Chennai, India</strong></div>
+        </div>
+      </div>
+
+      <div class="art">
+        <div class="ring"></div>
+        <div class="ring two"></div>
+        <div class="orb"><div><strong>✳</strong><span>IDEAS IN MOTION</span></div></div>
+        <div class="floating float-one">✦ always learning</div>
+        <div class="floating float-two">build() ↗</div>
+      </div>
+    </section>
+
+    <section class="content container" id="work">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / SELECTED WORK</div><h2>Ideas turned into<br><span class="gradient">experiments.</span></h2></div>
+        <p>A selection of projects across development, data, and emerging technology. Each one is a chance to learn by building.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <span class="number">PROJECT / 01</span>
+          <h3>Quantum Portfolio Optimizer</h3>
+          <p>Exploring portfolio allocation through quantum optimization and financial decision models.</p>
+          <div class="tags"><span class="tag">Qiskit</span><span class="tag">QAOA</span><span class="tag">Python</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 02</span>
+          <h3>Molecular Stability Explorer</h3>
+          <p>A research concept exploring molecular energy optimization and quantum chemistry.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">VQE</span><span class="tag">Quantum</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 03</span>
+          <h3>Pathfinder Website</h3>
+          <p>A responsive web experience focused on clear navigation, layout, and usability.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 04</span>
+          <h3>Flight Price Prediction</h3>
+          <p>A data-focused project exploring flight price prediction and a web-based interface.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Machine Learning</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 05</span>
+          <h3>Crop-Yield Prediction</h3>
+          <p>An agriculture-focused machine learning concept exploring data-driven predictions.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">Data</span></div>
+        </article>
+        <article class="card reveal">
+          <span class="number">PROJECT / 06</span>
+          <h3>UI & Visual Design</h3>
+          <p>Visual explorations of interface layouts, design systems, and user-focused experiences.</p>
+          <div class="tags"><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">Adobe</span></div>
+        </article>
+      </div>
+
+      <p style="color:var(--muted);font-size:11px;margin-top:25px">
+        Explore more on <a style="color:var(--mint)" href="https://github.com/Aseema-s" target="_blank" rel="noopener">GitHub ↗</a>
+      </p>
+    </section>
+
+    <section class="content about" id="about">
+      <div class="container about-layout">
+        <div class="about-art">MADE OF<br><span class="gradient">curiosity</span><br>✳</div>
+        <div class="about-copy">
+          <div class="eyebrow">02 / A LITTLE ABOUT ME</div>
+          <h2>Learning out loud.<br><span class="gradient">Building with intent.</span></h2>
+          <p>I'm pursuing Computer Science and Engineering, with a growing interest in frontend development, data science, and quantum computing.</p>
+          <p>I enjoy moving between logic and creativity — exploring algorithms, refining layouts, and experimenting with new ideas. I value curiosity, thoughtful collaboration, and learning by building, testing, and improving.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content container" id="skills">
+      <div class="eyebrow">03 / MY TOOLKIT</div>
+      <h2>Different tools.<br><span class="gradient">One curious brain.</span></h2>
+      <div class="skills">
+        <article class="skill"><span>⌘</span><h3>Frontend</h3><p>HTML, CSS, JavaScript, responsive design, React fundamentals.</p></article>
+        <article class="skill"><span>✳</span><h3>AI & Data</h3><p>Python, machine learning, NLP, and data analysis concepts.</p></article>
+        <article class="skill"><span>◎</span><h3>Quantum</h3><p>Qiskit, QAOA, VQE, QUBO, and quantum ML concepts.</p></article>
+        <article class="skill"><span>✎</span><h3>Design & Tools</h3><p>Figma, Canva, Adobe tools, Git, GitHub, and VS Code.</p></article>
+      </div>
+    </section>
+
+    <section class="content contact" id="contact">
+      <div class="container">
+        <div class="eyebrow">04 / HAVE SOMETHING IN MIND?</div>
+        <h2>Let's make<br><span class="gradient">something matter.</span></h2>
+        <p>Open to internships, collaborations, and opportunities to learn by doing. I'd love to hear from you.</p>
+        <div class="resume-buttons">
+          <a class="resume-button" href="/Aseema_S_Data_Science_Analytics_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 01</span>
+              <span>Data Science &amp; Analytics</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="resume-button" href="/Aseema_S_Frontend_Web_Development_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 02</span>
+              <span>Front-End Web Development</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="resume-button" href="/Aseema_S_Quantum_Computing_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 03</span>
+              <span>Quantum Computing</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="resume-button" href="/Aseema_S_UI_UX_Design_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="resume-label">
+              <span class="resume-category">Resume 04</span>
+              <span>UI/UX Design</span>
+            </span>
+            <span class="resume-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="actions" style="justify-content:center; margin-top:28px">
+          <a class="button secondary" href="https://github.com/Aseema-s" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="button secondary" href="https://linkedin.com/in/aseema-s" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>ASEEMA S · DIGITAL PORTFOLIO</span>
+    <span>MADE WITH CURIOSITY ✳</span>
+    <span>© <span id="year"></span></span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  </script>
+</body>
+</html>
